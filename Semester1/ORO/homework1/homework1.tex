@@ -1,0 +1,85 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{eurosym}
+\usepackage{amsmath}
+
+\title{Homework 1}
+\author{Marius-Mihai Budurean}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Problem Description}
+
+
+\noindent The pancakes bakery produces three kinds of pancakes ($P_1$ - normal crepe, $P_2$ - American pancakes, $P_3$ - Pathiri) that can be sold with chocolate, blueberry and cheese.
+\vspace{0.5cm}
+
+
+\noindent In a normal day, the bakery can't process more than 720 chocloate pancakes, 330 blueberry pancakes, 500 cheese pancakes.
+\vspace{0.5cm}
+
+
+\noindent The profits of the various kinds of pancakes (in Euro), depending on the type and topic: \\
+\vspace{0.5cm}
+
+
+\noindent
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Pancakes & Daily Production  & Chocolate Price & Blueberry Price & Cheese Price \\
+    \hline
+    $P_1$ normal crepe & 300 & \euro{}8 & \euro{}10 & \euro{}12 \\
+    \hline
+    $P_2$ American pancakes & 350 & \euro{}15 & \euro{}12 & \euro{}8 \\
+    \hline
+    $P_3$ Pathiri & 400 & \euro{}8 & \euro{}9 & \euro{}15 \\
+    \hline
+\end{tabular}%
+}
+
+
+\vspace{0.5cm}
+\noindent How to maximize the total sales profit?
+
+
+\section{Variables}
+
+
+\begin{itemize}
+    \item $x_1 \rightarrow P_1$ with chocolate
+    \item $x_2 \rightarrow P_1$ with blueberry
+    \item $x_3 \rightarrow P_1$ with cheese
+    \item $y_1 \rightarrow P_2$ with chocolate
+    \item $y_2 \rightarrow P_2$ with blueberry
+    \item $y_3 \rightarrow P_2$ with cheese
+    \item $z_1 \rightarrow P_3$ with chocolate
+    \item $z_2 \rightarrow P_3$ with blueberry
+    \item $z_3 \rightarrow P_3$ with cheese
+\end{itemize}
+
+
+\section{Profit Maximize Function}
+
+
+$max(8x_1 + 10x_2 + 12x_3 + 15y_1 + 12y_2 + 8y_3 + 8z_1 + 9z_2 + 15z_3)$
+
+
+\section{System}
+\[
+\begin{cases}
+    x_1 + y_1 + z_1 & \leq 720 \\
+    x_2 + y_2 + z_2 & \leq 330 \\
+    x_3 + y_3 + z_3 & \leq 500 \\
+    x_1 + x_2 + x_3 & \leq 300 \\
+    y_1 + y_2 + y_3 & \leq 350 \\
+    z_1 + z_2 + z_3 & \leq 400 \\
+    x_i, y_i, z_i & \geq 0, i \in \{1, 2, 3\}
+\end{cases}
+\]  
+\end{document}
