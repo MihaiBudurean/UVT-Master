@@ -3,7 +3,7 @@ from time import ctime
 
 
 HOST = '127.0.0.1'
-PORT = 123
+PORT = 13179
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
