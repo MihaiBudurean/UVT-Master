@@ -1,4 +1,4 @@
-# 7. ex 1
+# 7.1 ex 1
 golden <- function(f, a, b, tol = 0.0000001) {
     ratio <- 2 / (sqrt(5) + 1)
     x1 <- b - ratio * (b - a)
@@ -7,7 +7,7 @@ golden <- function(f, a, b, tol = 0.0000001) {
     f1 <- f(x1)
     f2 <- f(x2)
 
-    while(abs(b - a) > tol) {
+    while (abs(b - a) > tol) {
         if (f2 > f1) {
             b <- x2
             x2 <- x1
@@ -27,28 +27,28 @@ golden <- function(f, a, b, tol = 0.0000001) {
 
 # a
 func1 <- function(x) {
-    return (abs(x - 3.5) + abs(x - 2) + abs(x - 1))
+    return(abs(x - 3.5) + abs(x - 2) + abs(x - 1))
 }
 curve(func1, from = 0, to = 5)
-golden(func1, 1, 5)
+print(golden(func1, 1, 5))
 # b
 func2 <- function(x) {
-    return (abs(x - 3.2) + abs(x - 3.5) + abs(x - 2) + abs(x -1))
+    return(abs(x - 3.2) + abs(x - 3.5) + abs(x - 2) + abs(x -1))
 }
-curve(func2, from = 0, to = 5)
-golden(func2, 1, 5)
+# curve(func2, from = 0, to = 5)
+print(golden(func2, 1, 5))
 
 # 7.4 ex 1
 # a
-optimize(func1, interval = c(0, 5))
+print(optimize(func1, interval = c(0, 5)))
 # b
-optimize(func2, interval = c(0, 5))
+print(optimize(func2, interval = c(0, 5)))
 
 # 7.4 ex 2
 f <- function(params) {
   a <- params[1]
   b <- params[2]
-  result <- (a - 1) + 3.2/b + 3 * log(gamma(a)) + 3 * a * log(b)
+  result <- (a - 1) + 3.2 / b + 3 * log(gamma(a)) + 3 * a * log(b)
   return(result)
 }
 
