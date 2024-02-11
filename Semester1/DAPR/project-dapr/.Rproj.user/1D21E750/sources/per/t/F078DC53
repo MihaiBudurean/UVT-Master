@@ -1,0 +1,27 @@
+{
+    "id": "F078DC53",
+    "path": "D:/RStudio Code/project-dapr/cancer_veteran.R",
+    "project_path": "cancer_veteran.R",
+    "type": "r_source",
+    "hash": "2778554036",
+    "contents": "",
+    "dirty": false,
+    "created": 1706538228443.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "61,17",
+        "scrollLine": "49"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1706629018,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1706629018146,
+    "read_only": false,
+    "read_only_alternatives": []
+}

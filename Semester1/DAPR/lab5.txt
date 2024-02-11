@@ -1,0 +1,5 @@
+Solve the following exercises from Chapter 9 in J. Verzani, Using R for Introductory Statistics, 2nd Edition, 2014:
+- page 303, ex. 9.2, 9.7
+- page 309, ex. 9.8, 9.14
+- page 320, ex. 9.25
+- page 331, ex. 9.30, 9.32.
