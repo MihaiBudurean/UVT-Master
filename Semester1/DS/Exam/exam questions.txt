@@ -1,0 +1,99 @@
+1. Consider the case of a distributed application with only two processes that are need to update some data by entering in a critical section. Compare the distributed algorithm with the centralized algorithm for mutual exclusion: how they are different, how many messages are sent, what happens in at the crash of one process. Which you suggest to be better in this case?/ Luați în considerare cazul unei aplicații distribuite cu doar două procese care trebuie să actualizeze unele date, intrând într-o secțiune critică. Comparați algoritmul distribuit cu algoritmul centralizat pentru excluderea reciprocă: modul în care acestea sunt diferite, câte mesaje sunt trimise, ce se întâmplă la blocarea unui proces. Pe care îl sugerați să fie mai bun în acest caz?
+
+In a two-process scenario for mutual exclusion, a distributed algorithm requires agreement through coordination, leading to a higher number of messages and susceptibility to disruptions in case of crashes. 
+
+On the other hand, a centralized algorithm, while simpler with fewer messages, may face a single point of failure if the central authority crashes. 
+
+Based on theory, the centralized algorithm needs 3 messages, while distributed needs 2(n-1), and if n in our case is 2 => 2 messages. In this case, the delay for both algorithms is 2.
+
+Distributed algorithm messages: n-1 request messages and n-1 grant messages
+
+Centralized algorithm messages: request, grant, and exit.
+
+The choice between them depends on factors like fault tolerance, communication overhead, and system complexity, aligning with the specific requirements of the distributed application.
+
+ 
+
+2. Give a practical example (a concrete distributed system other than in the textbook) for the following advantage of a distributed system over other kinds of systems: communicationn./Dati un exemplu practic (a unui sistem distribuit altul decat cel din manual) pentru urmatorul avantaj al sistemelor distribuite asupra altor feluri de sisteme: comunicare. 
+
+In a distributed system, there's no shared memory, so the entire nature of interprocess communication must be completely rethought from scratch. All communication in a distributed system is based on message passing.
+
+A good practical example of a distributed system communication would be BitTorrent, which allows its users to share files without the existence of a central server. For example, when a user downloads a file, he receives pieces of the file from different users at the same time. This permits a faster download and a more efficient use of band length.
+
+3. Explain the single-sign-on concept used in Grids/Explicați conceptul de conectare unică utilizat în Grid
+
+Single sign-on is one of the requirements for Grids. A definition for single-sign-on would be authentication to any Grid resources authenticates for all others.
+
+A single sign-on is a mechanism that allows users to authenticate once and access multiple applications without the need to enter login credentials again. SSO is as much a convenient feature for users as it is a security concern for application designers.
+
+4. Why the synchronization techniques used for processes running on one computer are not applicable in the case of distributed systems?/De ce tehnicile de sincronizare utilizate pentru procesele care rulează un computer nu se aplică în cazul distribuite sisteme?
+
+Synchronization techniques used on one computer are usually semaphores and monitors. These methods are not suitable for distributed systems because they rely on the existence of shared memory.
+
+Another problem would be that clock synchronization on distributed systems is complicated to attain because the devices from the system use their local clocks. It is difficult to implement a system that uses a global clock to avoid timestamp errors.
+
+The principal problems that are encountered and need to be tackled in distributed systems are time, mutual exclusion, election algorithms, atomic transactions, and deadlocks.
+
+5. Consider a vector of 4 integer elements with given values. Write it in SOAP encoding style./Luați în considerare un vector de 4 elemente întregi cu valori date. Scrieți-l în stil de codare SOAP.
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+
+  <soap:Header />
+
+  <soap:Body>
+
+    <m:vector xmlns:m="http://example.com/vector">
+
+      <m:element>1</m:element>
+
+      <m:element>2</m:element>
+
+      <m:element>3</m:element>
+
+      <m:element>4</m:element>
+
+    </m:vector>
+
+  </soap:Body>
+
+</soap:Envelope>
+
+6. Give two examples to illustrate the difference between a time-triggered real-time distributed system and an event-triggered real-time distributed system./Dați două exemple pentru a ilustra diferența dintre un sistem distribuit în timp real declanșat de timp și un sistem distribuit în timp real declanșat de eveniment.
+
+Event-triggered real-time systems: systems that are triggered by some relevant events that happen in the real world, detected by some sensors. Time-triggered real-time systems: interrupted at some interval by the clock ticks (dT milliseconds). At each tick, the sensors are sampled.
+
+Event-triggered designs give faster response at low load but more overhead and chance of failure at high load. Time-trigger designs have the opposite properties and are only suitable in a relatively static environment in which a great deal is known about syst behavior in advance.
+
+
+Some examples to show the difference between those two types of events are: what happens when a pipe ruptures in a controlled nuclear reactor, and a time-triggered elevator controller that samples every 500 msec. 
+
+For the first example, many sensors are triggered, such as temperature alarms pressure alarms, or radioactivity alarms. This event shower may overwhelm the computing system and bring it down, potentially causing problems far more serious than the rupture of a single pipe.
+
+For the second example, if both calls fall within one sampling period, the controller will have to make a decision, for example, using the nearest-customer-first rule, in which case it will go up.
+
+7. Explain the usefulness of a virtual namespace/Explicați utilitatea unui spațiu de nume virtuale.
+
+An example of a distributed system that demonstrates the concept of location transparency is a distributed file system. In a distributed file system, files are stored on multiple servers across a network, but the users access them as if they were all stored in a single location. This is made possible through the use of a centralized directory that maps file names to their physical locations on the network. When a user requests a file, the file system software transparently retrieves it from the correct server, regardless of its physical location. The user is unaware of where the file is stored, and the system appears to them as if all files are stored in the same place. This level of transparency enables users to access their files seamlessly, regardless of their physical location and makes it easier for them to collaborate on projects and share information.
+
+8. Each point on the horizontal line associated with a process represents an event (arrows are communications). Consider the case when the logical clock on each process is set to count the event number (first event is numbered with 1, the second with 2). The horizontal means the real time. Apply the Lamport algorithm for logical clock synchronization in the case of a distributed application with three processes that evolves in time like in the following figure (put the number near the points). / Fiecare punct de pe linia orizontala asociata cu un proces reprezinta un eveniment (sagetile sunt comunicari). Se considera cazul cand ceasul logic al fiecarui process este setat pentru a contoriza numarul de ordine a evenimentului (primul eveniment este numerotat cu 1, al doilea cu 2). Orizontala semnifica timpul real. Aplicati algoritmul lui Lamport pentru sincronizarea ceasurilor logice in cazul aplicatiei distribuite cu trei procese care evolueaza in timp precum in figura urmatoare (puneti numarul aproape de puncte). + photo
+
+9. Explain the differences between network virtualization and storage virtualization/Explicați diferențele dintre virtualizarea rețelei și virtualizarea stocării
+
+An example would be the distributed file system. In this system, users have access to files stored on multiple servers on the network, without needing to know the details of the physical location of the files. 
+
+The user can access a file through a standard file access interface without needing to know where the file is located on the network. The distributed system provides access transparency through a file management infrastructure that automatically resolves file access and manages file replication and synchronization in real-time.
+
+10. Give a concrete example of a distributed system functionality to illustrate the following concept: availability./Dati un exemplu concret de functionalitate a unui sistem distribuit pentru a ilustra urmatorul concept: disponibilitate.
+
+Availability is one of the functionalities of distributed systems. Decentralized systems are more economical from this point of view because redundancy increases availability when parts of a system fail.
+
+One example of a distributed system with high availability is cryptocurrencies. Blockchains allow all actors on the network to have access to the entire data set on their computer. The nature of this distributed network enables high availability. If one node fails, all of the other nodes in the network are equipped with the full data set, therefore bringing down the network would require bringing down every node providing computation power.
+
+11. Comment the following key benefit of using Web services: Interoperability in a heterogeneous environment. /Comentează următorul beneficiu cheie al utilizării serviciilor web: Interoperabilitate într-un mediu eterogen.
+
+A key benefit of the web services is that interoperability has the highest priority. Web service interoperability objectives are to allow programming applications to communicate with each other and exchange data or services among themselves. Web services can achieve interoperability in a heterogeneous system due to: platform independence, scalability, and flexibility. Web services are based on open standards, such as SOAP, REST, or XML which enable communication between systems regardless of the underlying operating systems, hardware platforms, or programming languages used. Web services can be scaled horizontally and vertically to accommodate changing workloads and user demands. This scalability ensures that systems can adapt to evolving requirements and handle increased traffic without sacrificing interoperability.
+
+12. Explain how an UDDI registry can be used./Explicați cum poate fi utilizat un registru UDDI.
+
+
+Proxies play a crucial role in ensuring transparency in distributed systems, acting as intermediaries between clients and servers. They conceal the server's actual address from the client, safeguarding client information. Proxies also manage access to resources, offering transparency in resource access. Additionally, they contribute to transparency in performance, availability, and security by caching request results, enhancing system performance. In essence, proxies facilitate transparency in distributed systems by mediating communication, managing resource access, and optimizing performance, availability, and security.

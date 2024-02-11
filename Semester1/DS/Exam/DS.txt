@@ -1,0 +1,232 @@
+
+90:
+In a banking system, application-oriented service architecture (SOA) extends beyond web services. Components like the accounting, credit card management, bank transfer, and credit management systems can function as separate services with their own APIs. For example, the bank transfer system can utilize the credit card management service to verify fund availability. This illustrates an SOA without depending on web services but instead relies on internal communication between banking system components, enabling independent enhancement or modification without affecting other components for flexibility and scalability.
+
+
+91:
+A UDDI (Universal Description, Discovery, and Integration) registry serves as a centralized system for publishing, discovering, and integrating information about web services. It helps various parties, including service providers, users, and integrators, locate and utilize relevant web services by providing details such as description, URL, and access methods. For example, service providers can publish their services in a UDDI registry for users to discover and incorporate into their applications. 
+Integrators can also utilize the registry to integrate pertinent services. The UDDI Registry enhances interoperability among web services, promoting efficiency in their utilization.
+
+
+92:
+Proxies play a crucial role in ensuring transparency in distributed systems, acting as intermediaries between clients and servers. They conceal the server's actual address from the client, safeguarding client information. Proxies also manage access to resources, offering transparency in resource access. Additionally, they contribute to transparency in performance, availability, and security by caching request results, enhancing system performance. In essence, proxies facilitate transparency in distributed systems by mediating communication, managing resource access, and optimizing performance, availability, and security.
+
+
+93:
+RPC and REST are web service architectures with distinct philosophies. 
+RPC relies on remote procedure calls, establishing a close client-server connection. 
+In contrast, REST prioritizes transferring resource representations using web standards like HTTP and URI, emphasizing the independence of system components. 
+
+In summary, RPC centers on invoking remote procedures, while REST focuses on transferring resource representations through standardized web protocols.
+
+
+94:
+Data-centric communication in ubicomp involves direct transfer of information between nearby mobile devices, bypassing the need for a specific network address or central server. This is achieved through direct communication protocols like Bluetooth or Wi-Fi Direct, enabling devices to share data without an Internet connection.
+
+On the other hand, computer-centric communication, typical in the client-server model, relies on specific network addresses. Here, the client initiates requests to a central server, which responds with the requested information, using protocols like HTTP or FTP. 
+In essence, the key distinction lies in data-centric communication allowing direct device-to-device communication without intermediaries, while computer-centric communication relies on specific network addresses and central servers.
+
+
+95:
+An example of distributed system functionality that illustrates the transparency of the technology might be a distributed storage system such as Amazon S3. Users can access and manage stored files via a web interface or file management application without having to understand the details of the underlying technology behind the system. These would include, for example, how files are stored across multiple geographies to ensure availability and redundancy, or how file access requests are processed through a load-balancing system. Users don't have to deal with these technical issues because the system hides them, providing a seamless user experience.
+
+
+96:
+A resource for local processing in user context
+A resource located at the end of the network
+
+
+97:
+A synchronous system requires a process or function to wait for the response or result of another operation before proceeding. For instance, a process reading data from a file waits for the complete data before moving forward.
+
+But, an asynchronous system does not wait for the response before continuing. The process carrying out the operation can proceed with other activities, like a process making an asynchronous HTTP request to a server.
+
+
+98:
+Grid computing
+
+
+99:
+Clock synchronization in distributed systems ensures that the clocks on different nodes are aligned. It's crucial for maintaining event order, concurrency control, communication protocols, and security. Common protocols include NTP for general use and PTP for more precise synchronization. Achieving perfect synchronization is challenging due to factors like network delays and clock drift.
+
+
+100:
+A practical example of a distributed system that has the low cost advantage over other types of systems may be a distributed data storage system, such as Hadoop Distributed File System (HDFS). This system allows massive data storage on multiple sparse nodes, instead of relying on a single expensive centralized system. Each node in the HDFS system can be a sparing machine, and the total cost of the system can be less than the cost of a centralized data storage system of the same capacity. Also, if one node goes down, other nodes can pick up the load, so the system as a whole can be more reliable than a similar centralized system.
+
+
+101:
+A distributed system can use middleware to hide network heterogeneity by using a common communication protocol. For example, the system may be composed of nodes running on different operating systems and using different types of networks, such as Wi-Fi, Ethernet or 3G networks. Middleware can provide a layer of communication abstraction so that nodes can communicate with each other using the same protocol regardless of the network.
+This approach can provide more flexibility and scalability in the distributed system, as new nodes can be added or removed without having to change existing code or configuration. It can also provide better network transparency and reliability, as middleware can automatically manage bandwidth, latency or network failure issues.
+
+102:
+Using web services can be an effective way to improve programming productivity. This is achieved by the fact that web services provide a standardised interface for accessing functionality and resources on the Internet or within a network. This means that programmers no longer have to write code for each individual system or database, but can access these resources via a web service. This can greatly shorten the time and effort required to write code and help avoid errors, thus improving programming productivity.
+
+103:
+In a distributed 2-sensor based system using active replication, the level of fault tolerance hinges on the system's implementation and how it handles Byzantine faults. If one sensor exhibits a Byzantine fault, transmitting false information to the other process, the final results may be impacted if the processes fail to detect and disregard this erroneous data.
+
+To enhance fault tolerance against Byzantine faults, it is crucial to incorporate error detection and handling mechanisms into the system. For instance, processes can be designed to ignore information that deviates from the majority of data received from other processes or to conduct additional checks for verification.
+
+
+104:
+Web services are an efficient way of delivering information and functionality to users through a web interface. One of the advantages of using web services is that they support multiple types of clients, such as desktop applications, mobile applications, web browsers and others. Thus, web services make it possible to access information and functionality from any device with internet access, without the need to install additional software or be limited to certain types of operating systems or hardware.
+
+105:
+Application virtualization involves creating a virtual version of an application accessible across different operating systems without installation. For instance, an application on Windows can be virtualized for use on Mac or Linux, enabling access without additional software installation.
+
+On the other hand, machine virtualization creates a virtual version of an entire machine, including the operating system and applications. This virtualized machine can be accessed from any device, offering consistency in accessing applications and files across locations without requiring additional software installation.
+
+106:
+A virtual namespace is a software abstraction that separates the logical view of resources from their physical counterparts, facilitating the management and organization of a diverse collection of resources like files, directories, and services in a more structured manner.
+
+This virtual namespace offers a user-friendly and intuitive means of resource access, enabling users to navigate and interact with them as if they were stored in a unified location, even when physically distributed across a network. For instance, in a distributed file system, a virtual namespace can group files into virtual directories, simplifying user searches and minimizing errors or duplicates resulting from manual data entry or file management processes.
+
+107:
+An example of a distributed system that demonstrates the concept of location transparency is a distributed file system. In a distributed file system, files are stored on multiple servers across a network, but the users access them as if they were all stored in a single location. This is made possible through the use of a centralized directory that maps file names to their physical locations on the network. When a user requests a file, the file system software transparently retrieves it from the correct server, regardless of its physical location. The user is unaware of where the file is stored, and the system appears to them as if all files are stored in the same place. This level of transparency enables users to access their files seamlessly, regardless of their physical location, and makes it easier for them to collaborate on projects and share information.
+
+
+108:
+The concept of single sign-on (SSO) is used in Grid computing to provide a seamless and secure way for users to access multiple resources or applications within a Grid computing environment. With SSO, users are only required to authenticate once when they log in to the Grid, and they can then access all other resources or applications without having to re-enter their credentials. This reduces the inconvenience of having to remember multiple usernames and passwords, and makes it easier for users to access the resources and applications they need. Additionally, SSO helps to improve security by reducing the risk of password reuse and minimizing the number of points of vulnerability where user credentials can be stolen.
+
+
+109:
+The level of fault tolerance in a distributed 2-sensor system with active replication depends on the system's implementation and how it addresses Byzantine faults. If one sensor encounters a Byzantine fault, potentially transmitting false information to the other process, it can impact the final system results if not properly handled.
+
+Enhancing fault tolerance for Byzantine faults necessitates the implementation of error detection and handling mechanisms in the system. For instance, processes can be programmed to disregard information that deviates from the majority consensus or conduct additional checks to validate the received information. These measures contribute to a more robust system that can better withstand Byzantine faults.
+
+
+110:
+SOAP (Simple Object Access Protocol) is a generic messaging protocol for transmitting structured information between distributed applications across various platforms. In contrast, IIOP (Inter-ORB Protocol) is specific to CORBA (Common Object Request Broker Architecture), defining how CORBA objects communicate in distributed systems, providing a standardized mechanism for remote calls and management of distributed objects.
+
+
+111:
+RPC (Remote Procedure Call) centers around invoking remote procedures, fostering a close connection between client and server. In contrast, REST (Representational State Transfer) is focused on transferring resource representations via web standards like HTTP, URI, XML, and JSON. The fundamental difference lies in their approach: RPC emphasizes invoking remote procedures, while REST prioritizes the transfer of resource representations.
+
+
+112:
+Network virtualization creates a virtual network environment for multiple systems to connect to the same physical network, providing flexibility in management and facilitating application testing. Operating system virtualization allows multiple operating systems to run on the same hardware, enabling different systems like Windows and Linux to coexist on a single computer. In essence, network virtualization focuses on virtual networks, while operating system virtualization centers on virtual operating system environments, and both can complement each other for a comprehensive virtualization solution.
+
+
+113:
+A concrete example of operating systems in distributed systems is a distributed file system like Google's GFS. It allows users to access and manipulate files seamlessly, abstracting the distributed nature of storage across multiple servers. The operating system ensures a unified interface for users, simplifying interactions with distributed resources in the network.
+
+
+114:
+Centralised indexing involves a central server storing the resource index. Users access resources through this central server, which provides information on availability and location, resembling the client-server model.
+
+Decentralised indexing means each node in the network has its own copy of the resource index. When a node wants a resource, it queries other nodes for its availability. This approach operates without a single centralised entity, promoting network robustness and scalability. Each node can process part of the requests, reducing dependency on a specific node in decentralised indexing.
+
+
+115:
+The Berkley algorithm for time synchronization is preferred over the Cristian algorithm in scenarios where accuracy is a concern. This algorithm is often used in large-scale distributed systems where each node has its own clock, and the goal is to synchronize all clocks to a common reference time. The Berkley algorithm uses a voting mechanism to determine the average time among all nodes, which results in a more accurate time estimate compared to the Cristian algorithm that relies on a single node to provide the correct time.
+For example, consider a large-scale distributed system used for financial transactions. In this case, having accurate time synchronization is critical for maintaining the integrity of transactions and preventing fraud. In this scenario, the Berkley algorithm would be preferred over the Cristian algorithm because of its increased accuracy.
+
+
+116:
+TinyOS - an open source operating system designed specifically for wireless sensor networks and widely used in the Internet of Things (IoT).
+Constrained Application Protocol (CoAP) - an efficient communication protocol for wireless sensor networks, designed to be deployed on limited hardware resources.
+
+
+117:
+A practical example of a low-cost distributed system is the Hadoop Distributed File System (HDFS). Unlike a single expensive centralized system, HDFS enables massive data storage across multiple inexpensive nodes. Each node is a cost-effective machine, making the total cost of the system lower than a centralized storage system of equivalent capacity. Furthermore, if one node fails, other nodes can take over, enhancing the overall reliability of the system compared to a similar centralized setup.
+
+
+118:
+In Service-Oriented Architecture (SOA), the registry is crucial for storing and managing information about available services. It enables clients to discover and access services through standardized communication, ensuring network transparency. Additionally, the registry facilitates the management of new or updated services by registering them, making them accessible to clients. Overall, the registry plays a vital role in simplifying service discovery, access, and communication in SOA.
+
+
+119:
+Leasing from ubicomp refers to granting temporary access to a specific resource or service in a distributed ubiquitous-based system. This leasing can be granted between mobile devices and services or resources in the surrounding infrastructure. The purpose of leasing is to optimise the use of resources and allow mobile devices to access resources at the right time and place, without having to permanently purchase or manage them. Leasing can be used to improve the efficiency and flexibility of distributed location-based systems.
+
+
+120:
+A concrete example of programming language functionality in a distributed system is the use of Remote Procedure Call (RPC) frameworks like Apache Thrift or gRPC. These frameworks enable seamless communication between components written in different programming languages. For instance, a Java component can make remote calls to a Python component, overcoming language barriers and facilitating efficient interoperability in the distributed system.
+
+
+121:
+A synchronous dispatch primitive requires a process to wait until a dispatch operation is complete, causing the entire system to stall until the result is obtained. During this synchronous dispatch, the process is unable to perform other tasks. For example, if a client sends a message to a server synchronously, it waits until the server finishes processing and sends a reply.
+
+Conversely, an asynchronous forwarding primitive doesn't involve a process waiting. The process can continue with other tasks, unaffected by the send operation's processing or completion. For instance, if a client sends a message to a server asynchronously, it can proceed with other activities while the server processes the message. The client process receives a notification when the server completes processing, allowing it to retrieve the result of the sending.
+
+
+122:
+Synchronisation techniques for processes running a computer are not directly applicable to distributed systems because of the added complexity of distributed components and the difficulties in transmitting data between components. In distributed systems, processes can be hosted on different devices and can access distributed resources and communicate with each other over networks. This can create problems related to delay, packet loss and other reliability issues that can affect process synchronisation. Therefore, special synchronization techniques, such as message-based algorithms or distributed clock-based algorithms, are needed to ensure synchronization between processes in distributed systems.
+
+
+123:
+Service-Oriented Architecture (SOA) is adaptable to both loosely coupled and tightly coupled systems. In loosely coupled systems, it offers flexibility and scalability, allowing services to be updated or added without affecting other applications. In tightly coupled systems, SOA facilitates easy integration of services into complex applications and supports change management without disrupting the entire system. However, disadvantages include the complexity of creating and maintaining services and the dependence on service availability, which can affect system reliability if a service becomes unavailable.
+
+
+124:
+Advantages of distributed systems over centralized ones:
+Scalability: Distributed systems can be easily scaled up by adding new nodes to the system, making them suitable for handling increased demand for computational resources.
+Reliability: Distributed systems are more reliable than centralized systems because if one node of the distributed system is unavailable, other nodes can take over the load and thus avoid disruption of the entire system.
+
+Disadvantages of distributed systems compared to centralized ones:
+Complexity: Distributed systems are more complex than centralized systems because they have to manage multiple nodes communicating with each other, as well as issues such as synchronization and fault tolerance.
+Latency: Distributed systems can have higher latency than centralized systems because data must be transmitted between nodes and processed at each node. This can affect the performance of the system as a whole.
+
+
+
+125:
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+  <soap:Header/>
+  <soap:Body>
+    <m:vector xmlns:m="http://example.com/vector">
+      <m:element>1</m:element>
+      <m:element>2</m:element>
+      <m:element>3</m:element>
+      <m:element>4</m:element>
+    </m:vector>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+126:
+Cristian's algorithm for time synchronization is preferable to Berkley's algorithm when time synchronization is desired in a system with limited resources. This algorithm is more efficient in terms of computational resources because it does not require periodic messaging between processes and does not require the arithmetic mean of time values for each process. Instead, it uses a single message from a reference process to synchronize all processes. This algorithm is often preferred in bandwidth-constrained systems or systems with high network latencies.
+
+
+127:
+A soft real-time distributed system is a system where the same operations can be performed in several different ways and where no result is critical to the system and delays can be tolerated to a certain extent. For example, an online chat system would be a soft real-time distributed system because messages can be sent and received with a small delay without significantly affecting the user experience.
+A hard real-time distributed system is a system where certain operations must be completed within a limited time frame and where errors can have critical consequences for the system. For example, an air traffic control system would be a hard real-time distributed system because delays in information transmissions can have serious consequences for aircraft safety. In this case, the system must be able to handle delays and errors in an efficient way so that safe operation can be ensured.
+
+
+128:
+In the case of the Bully algorithm, when process 3 crashes and process 1 identifies this situation, process 1 starts sending "choice" messages to each of the other processes, starting with the process with the higher identifier.
+If process 2 responds positively to the "choice" message received from process 1, process 1 becomes the coordinator. In this case, a total of 2 messages are sent (a "choice" message from process 1 to process 2 and a positive message from process 2 to process 1).
+If process 2 does not respond to the "choice" message or responds negatively, process 1 starts sending a "choice" message to process 3. Process 3, being blocked, cannot respond, and process 1 becomes the new coordinator. In this case, a total of 3 messages are sent (a "choice" message from process 1 to process 2, a negative message from process 2 to process 1, and a "choice" message from process 1 to process 3).
+In the case of the Ring algorithm, when process 3 hangs, process 1 will start sending a "choice" message to process 2. Process 2, in turn, will send a "choice" message to process 3, which is hung, not can answer Process 2 will understand that process 3 can no longer function as coordinator and will send a "choose" message to process 1, which will become the new coordinator.
+In this case, a total of 4 messages are sent (a "choice" message from process 1 to process 2, a "choice" message from process 2 to process 3, a negative message from process 3 to process 2, and a "choice" from process 2 to process 1).
+
+
+129:
+Synchronous communication is just like a real-time chat where both systems need to be ready at the same time, such as when confirming an online payment. Asynchronous communication does not necessitate both systems to be concurrently available, so you can send a message and go about your day, like receiving an email that you check whenever it's convenient. It's all about when the systems talk and when they expect a reply—sync needs both to be on point, while async lets you take your time.
+
+
+130:
+Parallelism transparency in a distributed e-commerce system means users can shop online without knowing the system's complexity. Multiple servers work in the background to improve performance, but users experience a simple process similar to a centralized system, showcasing how parallelism complexities are hidden for a seamless user interaction.
+
+
+131:
+Web services have brought significant improvements to the web, including enhanced:
+
+-Interoperability: Applications can communicate independently of platforms or programming languages.
+-Flexibility: Applications can be developed and deployed independently, making them more adaptable to changes.
+-Mobility: Access to applications and information from any Internet-connected device, benefiting mobile users.
+-Scalability: Applications can be distributed across multiple servers, handling traffic more efficiently and providing better performance.
+-Accessibility: Access to applications and information from anywhere, promoting collaboration and real-time interaction.
+
+In summary, web services offer increased flexibility, accessibility, and interconnection for web applications, facilitating global collaboration and information exchange.
+
+
+132:
+Imagine an air traffic monitoring system with multiple control stations spread out geographically. Each station shares data about aircraft positions and weather conditions, allowing them to collaboratively make informed decisions. For example, if one station spots adverse weather, it can alert others to take precautions. This collaborative effort ensures enhanced safety and efficiency compared to operating independently.
+
+
+133:
+An example of a P2P application that manages and shares information would be BitTorrent. BitTorrent is a file sharing protocol that allows users to download and share files with each other via peer-to-peer networks. Users can download files from multiple users at the same time, which improves download speed. Users who download files can also share them, which improves the availability of files for other users. BitTorrent provides an efficient and scalable platform for sharing files on a distributed network.
+
+
+
+
+

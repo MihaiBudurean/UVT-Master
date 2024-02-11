@@ -1,0 +1,150 @@
+46:Există două modele distincte de arhitectură de rețea: P2P (peer-to-peer) și client-server, fiecare fiind utilizat în contexte diferite. În cadrul modelului client-server, un server centralizat gestionează solicitările clienților, care transmit și primesc informații de la acesta. Această structură este întâlnită în aplicații precum e-mailul, web-ul și serviciile de rețea.
+Iar modelul P2P se bazează pe interacțiunea directă între nodurile din rețea, eliminând nevoia unei entități centralizate. Fiecare nod poate acționa atât ca client, cât și ca server, putând solicita sau furniza informații și resurse altor noduri. Acest tip de arhitectură este întâlnit în aplicații precum partajarea de fișiere, jocurile online și sistemele de vot.
+În general, modelul client-server este considerat mai stabil și mai fiabil datorită unei entități centrale care gestionează comunicarea. Pe de altă parte, modelul P2P oferă o scalabilitate și flexibilitate mai mari, deoarece nu există o dependență de o entitate unică pentru gestionarea comunicației.
+
+47:Un exemplu practic de extensibilitate a unui sistem distribuit ar fi un sistem de monitorizare a traficului rutier. Acest sistem poate fi construit cu mai multe dispozitive IoT, precum camere și senzori, amplasate pe diverse intersecții și autostrăzi. Fiecare dispozitiv poate colecta informații despre trafic și le poate transmite unui server central pentru procesare. Dacă este necesar să se adauge mai multe dispozitive pentru a acoperi o zonă mai mare, acest lucru poate fi făcut fără a afecta funcționarea sistemului existent. De asemenea, dacă este necesar să se îmbunătățească capacitatea de procesare, se pot adăuga mai multe servere la sistem. Acest lucru demonstrează extensibilitatea sistemului, deoarece acesta poate fi ușor adaptat la nevoile crescânde ale aplicației fără a afecta funcționarea sau disponibilitatea sistemului.
+
+48:Middleware se refera la : a:software
+
+49:Un cloudlet servește dispozitive mobile sau inteligente in: c.edge computing
+
+50:Give three concrete examples of applications of ubicomp.
+  Smart Home Systems
+  Wearable Health Devices
+  Location-Based Services
+
+51:Virtualizarea aplicațiilor izolează și încapsulează aplicațiile individuale, permițându-le să ruleze independent de sistemul de operare subiacent. Se concentrează pe portabilitate și compatibilitate, permițând aplicațiilor să ruleze pe diferite sisteme de operare fără modificări. Virtualizarea sistemului de operare, pe de altă parte, creează instanțe virtuale ale sistemelor de operare întregi, facilitând consolidarea serverului, optimizarea resurselor și capacitatea de a rula mai multe sisteme de operare pe o singură mașină fizică. Acesta implică un domeniu mai extins, inclusiv întregul sistem de operare și resursele acestuia.
+
+52:În cazul algoritmului condus de server, server-ul este responsabil pentru a menține un registru actualizat al stațiilor de lucru active și inactive. Atunci când o stație de lucru devine inactivă, server-ul o marchează în registrul său și poate să înceapă acțiunile necesare pentru a o localiza. Acest algoritm este adesea utilizat în mediile de rețea care au un server central puternic și care necesită o gestionare centralizată a resurselor.
+În cazul algoritmului condus de client, fiecare stație de lucru își monitorizează propria activitate și raportează către alte stații de lucru dacă devine inactivă. Alte stații de lucru primesc aceste rapoarte și le utilizează pentru a menține un registru actualizat al stațiilor de lucru inactive. Acest algoritm este adesea utilizat în mediile de rețea care au stații de lucru egal puternice și care necesită o gestionare distribuită a resurselor.
+Ambii algoritmi au avantaje și dezavantaje, iar alegerea celui mai potrivit depinde de cerințele specifice ale unei anumite aplicații sau medii de rețea.
+
+53:Multicasting refers to the transmission of a message from one source to multiple receivers within a network, but only to a specific, selected group of recipients. In multicasting, only the receivers who have expressed interest in receiving the message are sent the data. This approach is more efficient than broadcasting, as it reduces network congestion and improves network performance.
+Broadcasting, on the other hand, involves transmitting a message from one source to all possible recipients in a network. Every device connected to the network will receive the broadcast message, regardless of whether they are interested in the data or not. Broadcasting is less efficient than multicasting, as it increases network congestion and can negatively impact network performance.
+The main difference between multicasting and broadcasting is that multicasting is targeted to a specific group of recipients, while broadcasting sends messages to all possible recipients in a network.
+
+54:
+The concept of a single image means that a distributed system provides users with a coherent and consistent experience without revealing the internal details of the system. In this way, the user perceives the system as a single computer, even though it is actually based on multiple computers working together.
+Examples:
+Distributed file system: A distributed file system may consist of multiple nodes that store files and appears to the user as a single file system with the same structure and functions, without the need for them to know that files are stored in multiple locations.
+Computational grid: A computational grid is a collection of independent computers working together to perform a large computing task. The user can submit a job to the grid, and it will distribute the task to nodes within the grid for processing. The final results are presented to the user as if they were produced by a single computer, without the need to know that they are the result of collaboration among multiple computers.
+
+55:În comunicarea în grup, un grup închis se referă la un grup unde accesul este limitat doar la membrii selectați sau invitați. Acest grup poate fi creat pentru scopuri specifice și poate fi accesibil doar prin intermediul unui parolă sau a unei invitații. În acest tip de grup, informațiile sunt confidentiale și pot fi accesate doar de membrii autorizați.
+Pe de altă parte, un grup deschis se referă la un grup unde oricine poate accesa informațiile sau poate participa la discuții. Acest tip de grup poate fi creat pentru a permite libertatea de exprimare și pentru a încuraja discuțiile deschise și participarea activă a tuturor membrii interesați. În acest tip de grup, informațiile pot fi accesate sau vizualizate de oricine și pot fi distribuite liber.
+Așadar, diferența dintre un grup închis și unul deschis în comunicare în grup se referă la nivelul de accesibilitate și confidențialitate al informațiilor din grup.
+
+56:Un exemplu concret de funcționalitate a unui sistem distribuit care explică cum middleware-ul ascunde eterogeneitatea la nivel de arhitecturi ale calculatoarelor ar fi o aplicație de e-commerce care se conectează la mai multe magazine on-line pentru a obține produsele și prețurile lor.
+În acest sistem, fiecare magazin on-line poate avea o arhitectură diferită a sistemului său de operare, hardware și baze de date, dar aplicația de e-commerce nu trebuie să cunoască aceste detalii. Middleware-ul din acest sistem asigură abstractizarea acestor detalii și oferă o interfață standardizată pentru aplicația de e-commerce pentru a se conecta la magazinele on-line.
+Aplicația de e-commerce poate apela middleware-ul pentru a obține produsele și prețurile de la fiecare magazin on-line, iar middleware-ul poate traduce aceste cereri în limbajul specific fiecărui magazin și poate obține informațiile necesare. De asemenea, middleware-ul poate transforma informațiile obținute într-un format standard, astfel încât aplicația de e-commerce să le poată utiliza fără a fi afectată de eterogeneitatea arhitecturilor sistemelor.
+Acest exemplu ilustrează cum middleware-ul poate ascunde eterogeneitatea la nivel de arhitecturi ale calculatoarelor, permitând aplicațiilor să interacționeze și să se coordoneze fără a fi afectate de diferențele în hardware, sistem de operare sau baze de date ale sistemelor individuale.
+
+57:Virtualizarea aplicației și virtualizarea desktop sunt două tipuri diferite de virtualizare care au obiective și modalități de implementare diferite.
+Virtualizarea aplicației se referă la crearea unei versiuni virtuale a unei aplicații care poate fi accesată și utilizată pe orice sistem de operare fără a fi nevoie să se instaleze pe acesta. De exemplu, o aplicație care rulează pe un sistem de operare Windows poate fi virtualizată astfel încât să poată fi accesată și utilizată pe un sistem de operare Mac sau Linux. Acest tip de virtualizare permite utilizatorilor să acceseze aplicații specifice din orice locație sau dispozitiv, fără a fi nevoie să instaleze software suplimentar.
+Virtualizarea desktop, pe de altă parte, se referă la crearea unei versiuni virtuale a unui desktop, inclusiv a sistemului de operare și a aplicațiilor, care poate fi accesat și utilizat de pe orice dispozitiv, inclusiv de pe dispozitive mobile. Acest tip de virtualizare permite utilizatorilor să acceseze și să lucreze cu aceleași aplicații și fișiere indiferent de locație sau dispozitiv, fără a fi nevoie să instaleze software suplimentar.
+În concluzie, virtualizarea aplicației se concentrează pe virtualizarea aplicațiilor individuale, în timp ce virtualizarea desktop se concentrează pe crearea unei versiuni virtuale complete a desktop-ului.
+
+58:A remote procedure call requires: C. a synchronous communication
+
+59.a virtual organization in Grid computing refers to a dynamic, collaborative group formed for specific tasks, where members contribute geographically distributed computing resources. Enabled by middleware infrastructure, virtual organizations emphasize resource sharing, efficient allocation, security measures, and task coordination. They provide flexibility, scalability, and adhere to common policies, fostering effective collaboration in solving complex problems across diverse environments.
+
+60. What is specific for Edge and Fog compared with Cloud? (a si b)
+a. Use of mobile resources
+b. Network traffic
+
+61.Comunicarea orientată spre mesaje se referă la schimbul de informații între sistemele distribuite prin intermediul unor mesaje între procese. Un proces poate trimite un mesaj către un alt proces, care poate răspunde sau nu, fără a exista o asociere directă între cerere și răspuns. Procesele pot fi implementate independent unul de celălalt și pot fi programate să proceseze și să transmită mesaje în mod asincron.
+Comunicarea orientată spre cerere se referă la interacțiunea directă dintre două procese, în care un proces trimite o cerere către un alt proces și așteaptă un răspuns specific. Acest tip de comunicare presupune o interdependență mai puternică între procese și este mai puțin flexibilă decât comunicarea orientată spre mesaje. De exemplu, în sistemele de bază de date distribuite, un proces poate trimite o cerere către un server de bază de date pentru a obține o informație și așteaptă un răspuns clar de la server.
+
+62.It refers to the flexibility and independence it offers in terms of technologies, platforms, and programming languages. Web services, based on standardized protocols like HTTP and XML, allow diverse systems to communicate and exchange data seamlessly. This interoperability promotes freedom of choice by enabling organizations to use different technologies for different components of their systems. For example, a web service written in Java can easily communicate with a client application written in Python or a server running on a different operating system. This flexibility not only facilitates integration but also allows businesses to make technology choices based on their specific needs and preferences, fostering a more adaptable and diverse technological landscape.
+
+63.Virtualizarea rețelei se referă la abstractizarea și consolidarea hardware-ului fizic și a resurselor de rețea într-o singură entitate virtuală, astfel încât să poată fi gestionate și alocate în mod eficient. Scopul acestui proces este de a reduce costurile, de a îmbunătăți eficiența și de a facilita administrarea și monitorizarea rețelei.
+Virtualizarea stocării, pe de altă parte, se referă la abstractizarea și consolidarea mai multor dispozitive de stocare fizice într-o singură entitate virtuală, astfel încât acestea să poată fi gestionate și alocate în mod eficient. Scopul acestui proces este de a reduce costurile, de a îmbunătăți eficiența și de a facilita administrarea și monitorizarea stocării.
+Așadar, diferența dintre virtualizarea rețelei și virtualizarea stocării este că prima se concentrează pe virtualizarea resurselor de rețea, în timp ce a doua se concentrează pe virtualizarea resurselor de stocare.
+
+64.Un exemplu ar fi sistemul de fișiere distribuite. În acest sistem utilizatorii au acces la fișierele stocate pe mai multe servere din rețea, fără să fie necesar să cunoască detaliile privind locația fizică a fișierelor. Utilizatorul poate accesa un fișier prin intermediul unei interfețe standard de acces la fișiere, fără să fie necesar să știe unde se află fișierul în rețea. Sistemul distribuit asigură transparența accesului prin intermediul unei infrastructuri de gestionare a fișierelor care rezolvă automat accesul la fișiere și gestionează replicarea și sincronizarea fișierelor în timp real.
+
+65.Which device can be a node in Edge computing environment? (TOATE)
+a. Sensor
+b. Router
+c. Car
+d. Network switch
+
+66. Discovering resources in P2P systems (TOATE)
+a. is associated with the notion of servent
+b. is done through broadcasting
+c. is done using resource indexing
+d. is associated with the notion of presence
+
+67.Algoritmul centralizat necesită un proces coordonator care controlează accesul la secțiunea critică. Procesele își solicită accesul la coordonator, iar acesta decide care proces are acces la momentul dat. Acest lucru poate fi realizat prin trimiterea unui mesaj către coordonator și așteptarea unei răspunsuri. Acest lucru poate duce la un singur punct de blocare, dacă coordonatorul nu poate acorda acces la secțiunea critică sau dacă coordonatorul este blocat.
+Algoritmul token ring presupune utilizarea unui token virtual care circulă printre procese. Procesul care deține token-ul are acces la secțiunea critică. Procesul care a terminat accesul la secțiunea critică trece token-ul către următorul proces. Acest lucru poate fi realizat prin trimiterea unui mesaj către următorul proces. Algoritmul token ring necesită mai multe mesaje decât algoritmul centralizat, dar nu există un singur punct de blocare.
+În cazul nostru, unde sunt doar două procese, algoritmul centralizat ar fi probabil suficient și mai ușor de implementat. În cazul în care există mai multe procese sau un număr mare de solicitări de acces la secțiunea critică, algoritmul token ring ar fi probabil mai adecvat, deoarece nu există un singur punct de blocare.
+
+68.In P2P systems, simple broadcast sends messages to all peers indiscriminately, leading to potential inefficiency and increased network traffic. On the other hand, selective broadcast targets specific peers based on criteria, reducing unnecessary communication and making the dissemination of information more efficient and targeted.
+
+69.Un exemplu practic de reutilizare într-un sistem distribuit ar fi sistemul de gestionare a identității și autorizării (Identity and Access Management, IAM). Acest sistem poate fi utilizat de mai multe aplicații sau servicii din organizație, fără a fi necesară crearea de la zero a acestui sistem pentru fiecare aplicație sau serviciu individual.
+De exemplu, o organizație poate utiliza același sistem de gestionare a identității pentru a controla accesul la diferite resurse, cum ar fi rețelele interne, sistemele de stocare a datelor, aplicațiile web sau mobile. Astfel, sistemul IAM poate fi utilizat de mai multe ori în aceeași organizație, economisind timp și resurse și asigurând o gestionare centralizată a identității și autorizării.
+
+70."Port" se referă la un punct de acces unic pentru un serviciu specific pe un dispozitiv într-o rețea. Programele pot asculta pe un anumit port pentru a primi conexiuni sau pot utiliza un port pentru a se conecta la servicii de pe alte dispozitive.
+"Socket" reprezintă un punct final al comunicării între două programe prin intermediul unei rețele, funcționând ca un canal pentru transmiterea informațiilor.
+În Java, "socket" este un concept folosit pentru a descrie conexiuni de rețea între programe, iar biblioteca de socket-uri Java permite programatorilor să creeze și să gestioneze astfel de conexiuni în aplicațiile lor.
+WSDL (Web Services Description Language) este un limbaj de descriere a serviciilor web, folosit pentru a detalia serviciile disponibile pe web, inclusiv metodele și argumentele acestora. Un port WSDL descrie un punct final al unui serviciu web, specificând adresa URL și modalitatea de acces (de exemplu, prin HTTP sau HTTPS).
+
+71.Virtualizarea rețelei se referă la crearea unui mediu virtual de rețea prin intermediul software-ului, care permite mai multor sisteme să se conecteze la aceeași rețea fizică, fiecare sistem având propriul său mediu virtual. Aceasta permite o mai mare flexibilitate în managementul rețelelor și în testarea aplicațiilor și a infrastructurii. De exemplu, se poate crea o rețea virtuală pentru testarea aplicațiilor înainte de a fi implementate în rețeaua fizică.
+Virtualizarea sistemului de operare, pe de altă parte, se referă la crearea unui mediu virtual de sistem de operare prin intermediul software-ului, care permite rularea mai multor sisteme de operare pe același hardware. Acest lucru îți permite să rulezi diferite sisteme de operare pe același computer fără a fi necesară achiziționarea unui hardware separat pentru fiecare sistem de operare. De exemplu, poți rula Windows și Linux pe același computer, fiecare având propriul său mediu virtual de sistem de operare. se concentrează pe crearea unui mediu virtual de rețea, în timp ce virtualizarea sistemului de operare se concentrează pe crearea unui mediu virtual de sistem de operare. Ambele tehnologii au avantaje distincte și pot fi utilizate în combinație pentru a oferi o soluție completă de virtualizare.
+
+72.Unicasting is one-to-one communication, where a message is sent from one sender to one specific receiver. Multicasting is one-to-many communication, where a message is sent from one sender to multiple recipients simultaneously. Unicasting is suitable for private communication, while multicasting is efficient for delivering the same information to multiple recipients simultaneously, reducing network traffic.
+
+73.The computational grid:
+	c. received the name from an analogy with the electrical grid
+	d. is based on an electrical grid
+
+74.A component fault in a distributed system, such as a network partition, can lead to nodes being isolated from each other. This isolation may result in inconsistencies in data or state between the partitioned segments, potential data loss, and challenges in maintaining system integrity, especially in scenarios like distributed databases.
+
+75.It is commonly referred to as "VM Placement" or "VM Scheduling." This involves making decisions about where to deploy virtual machines on physical hosts within a cloud infrastructure to optimize resource utilization, performance, and overall efficiency.
+
+76.Grid computing coordinates distributed resources for complex tasks, often used in scientific research. Internet computing, or cloud computing, delivers on-demand services over the Internet. Grids are characterized by heterogeneous, distributed resources, while the Internet computing model emphasizes shared resource pools. Both paradigms overlap, with cloud computing incorporating grid-like features for scalability. In summary, grid computing is a specific use case within the broader context of Internet computing, and principles from grid computing have evolved into broader concepts in cloud computing.
+
+77.The amount of network capacity consumed is a metric for: e. Performance
+
+78.Gradul de toleranță la erori într-un sistem distribuit bazat pe 5 senzori cu replicare activă depinde de modul în care se implementează replicarea activă și de câte procese sunt afectate de defecțiunile bizantine.
+În cazul în care toate cele 5 procese asociate senzorilor sunt afectate de defecțiuni bizantine, sistemul nu ar putea funcționa corect, deoarece toate procesele ar transmite informații incorecte sau false.
+Cu toate acestea, în cazul în care doar o parte dintre procese sunt afectate de defecțiuni bizantine, sistemul ar putea utiliza majoritatea informațiilor corecte transmise de procesele neafectate pentru a-și îmbunătăți precizia sau pentru a compensa informațiile incorecte transmise de procesele afectate.
+Deci, gradul de toleranță la erori într-un sistem distribuit cu replicare activă poate varia în funcție de modul în care se implementează replicarea și de câte procese sunt afectate de defecțiuni bizantine. Cu toate acestea, în general, sistemele distribuite cu replicare activă au un grad mai mare de toleranță la erori comparativ cu sistemele distribuite fără replicare activă.
+
+79.<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+  <soap:Header />
+  <soap:Body>
+    <m:vector xmlns:m="http://example.com/vector">
+      <m:element>1</m:element>
+      <m:element>2</m:element>
+      <m:element>3</m:element>
+      <m:element>4</m:element>
+    </m:vector>
+  </soap:Body>
+</soap:Envelope>
+
+80.In a two-process scenario for mutual exclusion, a distributed algorithm requires agreement through coordination, leading to a higher number of messages and susceptibility to disruptions in case of crashes. On the other hand, a centralized algorithm, while simpler with fewer messages, may face a single point of failure if the central authority crashes. The choice between them depends on factors like fault tolerance, communication overhead, and system complexity, aligning with the specific requirements of the distributed application.
+
+81. rmiregistry in Java serves as a registry for Remote Method Invocation (RMI) objects, allowing them to be registered and looked up by clients. It provides a basic naming service, associating human-readable names with RMI objects, and operates on a default port (1099). By starting before the RMI server, it facilitates dynamic class loading, enabling the transmission of objects and their behavior between Java Virtual Machines (JVMs). While rmiregistry offers a simple object registry, more advanced scenarios may require additional naming services like Java Naming and Directory Interface (JNDI).
+
+82.Ride-sharing platforms like Uber and Lyft exemplify the advantage of inherent distribution in distributed systems. These platforms effectively coordinate and manage a decentralized network of users and drivers across various geographical locations. The system's inherent distribution ensures efficient load balancing, fault tolerance, scalability, and real-time updates, providing seamless and accessible transportation services to users.
+
+83.O primitivă de recepționare blocantă se blochează până când nu primește un răspuns sau nu se îndeplinește o anumită condiție. Aceasta înseamnă că procesul care a efectuat apelul este suspendat și nu poate continua execuția până când nu primește un răspuns. De exemplu, un apel de citire la un socket de rețea care așteaptă un pachet de date ar fi un exemplu de primitivă blocantă.
+Pe de altă parte, o primitivă ne-blocantă nu se blochează și nu așteaptă un răspuns sau îndeplinirea unei condiții. În schimb, aceasta returnează imediat controlul programului, fără a aștepta un răspuns. De exemplu, un apel non-blocant la un socket de rețea ar putea returna imediat controlul fără a aștepta pachetul de date, iar aplicația poate verifica periodic dacă datele au fost primite.
+
+84. c. at most once
+
+85.Stub-ul serverului este un intermediar care se află între client și server într-un apel de procedură la distanță. Rolul său este de a îmbrăca apelul de procedură făcut de client într-un format compatibil cu protocolul de comunicare folosit în sistemul distribuit și apoi să-l trimită serverului. De asemenea, stub-ul serverului poate fi utilizat pentru a oferi o anumită funcționalitate adițională, precum validarea parametrilor sau prelucrarea erorilor.
+Pe lângă acestea, stub-ul serverului poate fi de asemenea utilizat pentru a abstrahează complexitățile legate de rețea, cum ar fi convertirea adreselor IP, codificarea și decodificarea mesajelor și gestionarea conexiunilor de rețea. Prin intermediul stub-ului, clientul poate invoca apelul de procedură la distanță așa cum ar invoca orice altă procedură locală, fără a fi nevoie să știe despre detaliile tehnice ale comunicării în rețea.
+
+86.Un exemplu practic al scalabilității sistemelor distribuite poate fi sistemul de management al traficului aerian. Acest sistem este responsabil cu gestionarea traficului aerian în întreaga lume și trebuie să fie în măsură să facă față unei creșteri rapide a numărului de zboruri, în special în timpul sezonului de vacanță.
+Un sistem distribuit, care folosește mai multe procese și noduri, poate fi scalat rapid și ușor prin adăugarea de resurse, fără a afecta performanța sistemului sau așteptarea utilizatorilor. De exemplu, dacă un anumit nod devine suprasolicitat, se poate adăuga un alt nod în sistem, astfel încât să se poată gestiona mai mult trafic aerian. Această scalabilitate permite sistemului să se adapteze la cererile dinamice ale pieței, fără a fi nevoie de majorări costisitoare sau întreruperi ale serviciului.
+
+87.Grid și clustere sunt două concepte diferite, dar care se intersectează într-o anumită măsură.
+Grid computing se referă la utilizarea combinată a resurselor de calcul de la mai mulți noduri din diferite locații, care lucrează împreună pentru a rezolva o problemă complexă. Acestea pot fi resurse de hardware, software sau ambelor. Grid computing-ul oferă flexibilitate și escalabilitate, permițând utilizatorilor să acceseze resurse de calcul de la distanță, indiferent de locația fizică a acestora.
+Cluster computing, pe de altă parte, se referă la utilizarea a mai multor noduri interconectate pentru a oferi performanță superioară. Nodurile din cluster se comportă ca o singură entitate, oferind o capacitate de calcul combinată. Clusterele sunt utilizate în general pentru a oferi performanță ridicată pentru aplicații intensive de calcul, precum simulări, analize de date și alte tipuri similare de sarcini.
+În cazul în care un cluster este utilizat ca componentă a unui sistem Grid, acesta poate fi considerat ca un nod din mai multe noduri din rețeaua Grid. Clusterele din sistemul Grid pot fi utilizate pentru a furniza resurse de calcul suplimentare în cazul în care resursele existente nu sunt suficiente pentru a rezolva problema la mână.
+Astfel, se poate spune că clusterele sunt o formă de resurse de calcul care pot fi utilizate în cadrul unui sistem Grid, oferind performanță superioară și scalabilitate pentru a rezolva probleme complexe.
+
+88.In a distributed system with three sensors employing active replication to counter Byzantine failures, the degree of fault tolerance is two. This means that the system can tolerate up to two faulty sensors, exhibiting malicious or Byzantine behavior, while still maintaining correct and reliable operation. Active replication involves having multiple replicas (processes) of the same functionality, and as long as a majority of replicas (at least two out of three in this case) behave correctly, the system can resist Byzantine failures.
+
+89.c. at-most-once
