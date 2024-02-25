@@ -1,0 +1,115 @@
+--------------------------------------------------------------------------------
+Column names for survival::rotterdam dataset:
+pid
+year
+age
+meno
+size
+grade
+nodes
+pgr
+er
+hormon
+chemo
+rtime
+recur
+dtime
+death
+--------------------------------------------------------------------------------
+Censoring Status (death values):
+
+   0    1 
+1710 1272 
+--------------------------------------------------------------------------------
+Column names for date samples:
+surgery_date
+day_of_last_followup
+os_yrs
+os_days
+--------------------------------------------------------------------------------
+Survival Curve used for Kaplan Meier Curves:
+Call: survfit(formula = survival_object ~ 1, data = my_data)
+
+        n events median 0.95LCL 0.95UCL
+[1,] 2982   1272     11    10.6    11.8
+--------------------------------------------------------------------------------
+Estimation for survival percent:
+[1] 1.0000000 0.9959721 0.9265869 0.7435351 0.6546520
+--------------------------------------------------------------------------------
+Table of my_data$chemo:
+
+   0    1 
+2402  580 
+--------------------------------------------------------------------------------
+Log Rank Test based on Chemotherapy:
+Call:
+survdiff(formula = survival_object ~ chemo, data = my_data)
+
+           N Observed Expected (O-E)^2/E (O-E)^2/V
+chemo=0 2402     1014     1024    0.0963     0.495
+chemo=1  580      258      248    0.3977     0.495
+
+ Chisq= 0.5  on 1 degrees of freedom, p= 0.5 
+--------------------------------------------------------------------------------
+Log Rank Test based on Hormonal Treatment:
+Call:
+survdiff(formula = survival_object ~ hormon, data = my_data)
+
+            N Observed Expected (O-E)^2/E (O-E)^2/V
+hormon=0 2643     1113     1162      2.04      23.7
+hormon=1  339      159      110     21.43      23.7
+
+ Chisq= 23.7  on 1 degrees of freedom, p= 0.000001 
+--------------------------------------------------------------------------------
+Summary of Cox Regression:
+Call:
+coxph(formula = survival_object ~ hormon + chemo + size + er + 
+    pgr + nodes + meno + grade + age, data = my_data)
+
+  n= 2982, number of events= 1272 
+
+                 coef   exp(coef)    se(coef)      z             Pr(>|z|)    
+hormon    -0.06552683  0.93657392  0.08839904 -0.741             0.458535    
+chemo      0.05031736  1.05160478  0.08197559  0.614             0.539342    
+size20-50  0.44254269  1.55666029  0.06536125  6.771      0.0000000000128 ***
+size>50    0.82221530  2.27553526  0.09142494  8.993 < 0.0000000000000002 ***
+er        -0.00005512  0.99994488  0.00011068 -0.498             0.618466    
+pgr       -0.00036759  0.99963247  0.00012262 -2.998             0.002720 ** 
+nodes      0.07295028  1.07567705  0.00487854 14.953 < 0.0000000000000002 ***
+meno       0.07046213  1.07300393  0.10058100  0.701             0.483583    
+grade      0.31560775  1.37109234  0.07082121  4.456      0.0000083346814 ***
+age        0.01405764  1.01415691  0.00382957  3.671             0.000242 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+          exp(coef) exp(-coef) lower .95 upper .95
+hormon       0.9366     1.0677    0.7876    1.1137
+chemo        1.0516     0.9509    0.8955    1.2349
+size20-50    1.5567     0.6424    1.3695    1.7694
+size>50      2.2755     0.4395    1.9022    2.7221
+er           0.9999     1.0001    0.9997    1.0002
+pgr          0.9996     1.0004    0.9994    0.9999
+nodes        1.0757     0.9296    1.0654    1.0860
+meno         1.0730     0.9320    0.8810    1.3068
+grade        1.3711     0.7293    1.1934    1.5753
+age          1.0142     0.9860    1.0066    1.0218
+
+Concordance= 0.693  (se = 0.008 )
+Likelihood ratio test= 524.4  on 10 df,   p=<0.0000000000000002
+Wald test            = 609.4  on 10 df,   p=<0.0000000000000002
+Score (logrank) test = 688.1  on 10 df,   p=<0.0000000000000002
+
+--------------------------------------------------------------------------------
+Verification of the proportional hazards assumptions:
+        chisq df                   p
+hormon  0.684  1             0.40818
+chemo   2.100  1             0.14727
+size    5.206  2             0.07405
+er     59.748  1 0.00000000000001078
+pgr    41.637  1 0.00000000010987440
+nodes   4.073  1             0.04358
+meno    4.284  1             0.03846
+grade   3.163  1             0.07533
+age    13.954  1             0.00019
+GLOBAL 93.751 10 0.00000000000000096
+--------------------------------------------------------------------------------

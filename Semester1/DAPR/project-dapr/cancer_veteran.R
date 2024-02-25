@@ -1,78 +1,147 @@
 if (!requireNamespace("survival", quietly = TRUE)) {
   install.packages("survival")
 }
-library(survival)
 
 if (!requireNamespace("dplyr", quietly = TRUE)) {
   install.packages("dplyr")
 }
-library(dplyr)
 
+library(survival)
+library(dplyr)
 library(MASS)
 
-data("cancer")
+output_file <- file('output.txt', 'w')
+
+delimitator <- function() {
+  write(paste(rep("-", 80), collapse = ""), output_file)
+}
+
+output <- function(result) {
+  writeLines(capture.output(result), output_file)
+}
+
+data(survival::veteran)
 my_veteran <- veteran %>% 
   mutate(prior = ifelse(prior == 0, FALSE, TRUE)) %>%
-  mutate(trt = ifelse(trt == 1, "standard", "test")) %>%
+  mutate(trt = factor(trt, levels = c(1, 2), 
+                      labels = c("standard", "test"))) %>%
   mutate(status = ifelse(status == 0, FALSE, TRUE))
 
 # Descriptive Analysis
 summary(my_veteran)
+str(my_veteran)
 
 # trt
 my_trt <- table(my_veteran$trt)
-barplot(my_trt, ylim = c(0, 70))
+
+png(filename = "dataset_images/trt_barplot.png")
+par(cex = 1.5)
+barplot(my_trt, ylim = c(0, 137), col = c('blue', 'red'), 
+        main = "Treatment Type")
+dev.off()
 
 # celltype
 my_celltype <- table(my_veteran$celltype)
-barplot(my_celltype, ylim = c(0, 60))
-hist(my_celltype)
-pie(my_celltype)
+
+png(filename = "dataset_images/celltype_barplot.png", width = 600)
+par(cex = 1.5)
+barplot(my_celltype, ylim = c(0, 137), col = c('blue', 'red', 'green', 'yellow'), 
+        main = "Cell Type")
+dev.off()
 
 # time
-my_time <- table(my_veteran$time)
-boxplot(my_time)
-plot(density(my_time))
-qqnorm(my_time)
+my_time <- my_veteran$time
+
+png(filename = "dataset_images/time_boxplot.png")
+par(cex = 1.5)
+boxplot(my_time, col = 'blue', main = "Boxplot of Survival Time")
+dev.off()
+
+png(filename = "dataset_images/time_histogram.png")
+par(cex = 1.5)
+hist(my_time, col = 'green', main = "Histogram of Survival Time")
+dev.off()
 
 # status
 my_status <- table(my_veteran$status)
-barplot(my_status, ylim = c(0, 130))
+png(filename = "dataset_images/status_barplot.png")
+par(cex = 1.5)
+barplot(my_status, ylim = c(0, 137), col = c('blue', 'red'), 
+        main = "Censoring Status")
+dev.off()
 
 # karno
-my_karno <- table(my_veteran$karno)
-boxplot(my_karno)
-plot(density(my_karno))
-qqnorm(my_karno)
+my_karno <- my_veteran$karno
+
+png(filename = "dataset_images/karno_boxplot.png")
+par(cex = 1.5)
+boxplot(my_veteran$karno, col = 'blue', main = "Boxplot of Karnofsky Score")
+dev.off()
+
+png(filename = "dataset_images/karno_histogram.png")
+par(cex = 1.5)
+hist(my_veteran$karno, col = 'green', main = "Histogram of Karnofsky Score")
+dev.off()
+
 
 # diagtime
-my_diagtime <- table(my_veteran$diagtime)
-boxplot(my_diagtime)
-plot(density(my_diagtime))
-qqnorm(my_diagtime)
+my_diagtime <- my_veteran$diagtime
+
+png(filename = "dataset_images/diagtime_boxplot.png")
+par(cex = 1.5)
+boxplot(my_veteran$diagtime, col = 'blue', main = "Boxplot of Diagnosis Time")
+dev.off()
+
+png(filename = "dataset_images/diagtime_histogram.png")
+par(cex = 1.5)
+hist(my_veteran$diagtime, col = 'green', main = "Histogram of Diagnosis Time")
+dev.off()
+
 
 # age
-my_age <- table(my_veteran$age)
-boxplot(my_age)
-plot(density(my_age))
-qqnorm(my_age)
+my_age <- my_veteran$age
+
+png(filename = "dataset_images/age_boxplot.png")
+par(cex = 1.5)
+boxplot(my_veteran$age, col = 'blue', main = "Boxplot of Age")
+dev.off()
+
+png(filename = "dataset_images/age_histogram.png")
+par(cex = 1.5)
+hist(my_veteran$age, col = 'green', main = "Histogram of Age")
+dev.off()
 
 # prior
-my_prior <- table(prior)
-barplot(my_prior)
+my_prior <- table(my_veteran$prior)
+png(filename = "dataset_images/prior_barplot.png")
+par(cex = 1.5)
+barplot(my_prior, ylim = c(0, 137), col = c('blue', 'red'), 
+        main = "Prior Treatment")
+dev.off()
 
 # Statistic Hypotheses
-# Hypothesis 1
-treatment <- my_veteran$time[my_veteran$prior == TRUE]
-no_treatment <- my_veteran$time[my_veteran$prior == FALSE]
+# Check if the type of treatment is dependent on prior treatment
+trt_prior <- table(my_veteran$trt, my_veteran$prior)
+output(chisq.test(trt_prior))
+delimitator()
 
+# comparison between survival time for patients with standard and test treatment
+standard_treatment <- my_veteran$time[my_veteran$trt == 'standard']
+test_treatment <- my_veteran$time[my_veteran$trt == 'test']
 
-t.test(treatment, no_treatment, mu = 0, alternative = "greater")
+output(t.test(standard_treatment, test_treatment))
+delimitator()
 
-# Hypothesis 2
-summary(aov(my_veteran$karno ~ my_veteran$celltype))
+# comparison between survival time for patients with or without prior therapy
+with_prior <- my_veteran$time[my_veteran$prior == TRUE]
+without_prior <- my_veteran$time[my_veteran$prior == FALSE]
 
-pairwise.t.test(my_veteran$karno, my_veteran$celltype)
+output(t.test(with_prior, without_prior))
+delimitator()
+
+# Check if there is a correlation between karno and age
+output(cor.test(my_karno, my_age, method = "pearson"))
+delimitator()
 
 # Predictive Model
 karno <- my_veteran$karno
@@ -83,17 +152,28 @@ residuals <- resid(model)
 fitted <- fitted(model)
 summary(model)
 
-plot(age, karno)
-abline(model)
+png(filename = "model_images/model_plot.png")
+par(cex = 1.5)
+plot(age, karno, col = 'blue', main = "Plot of the model")
+abline(model, col = 'red')
+dev.off()
 
-hist(residuals)
-qqnorm(residuals)
+png(filename = "model_images/residuals_histogram.png")
+par(cex = 1.5)
+hist(my_veteran$age, col = 'green', main = "Histogram of Residuals")
+dev.off()
 
-shapiro.test(residuals)
+output(shapiro.test(residuals))
+delimitator()
 
 x <- (residuals)
 y <- (fitted)
-plot(y, x)
+png(filename = "model_images/residuals_plot.png")
+par(cex = 1.5)
+plot(y, x, col = 'blue', main = "Residuals Plot")
+dev.off()
 
 n_date <- data.frame(age = 68)
-predict(model, n_date, interval = "predict", level = 0.95)
+output(predict(model, n_date, interval = "predict", level = 0.95))
+
+close(output_file)
