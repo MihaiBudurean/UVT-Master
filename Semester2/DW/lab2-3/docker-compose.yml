@@ -1,0 +1,33 @@
+version: '3'
+services:
+    DC1N1:
+        image: cassandra:3.10
+        command: bash -c 'if [ -z "$$(ls -A /var/lib/cassandra/)" ] ; then sleep 0; fi && /docker-entrypoint.sh cassandra -f'
+        networks:
+            - dc1ring
+        volumes:
+            - ./containers/n1data:/var/lib/cassandra
+        environment:
+            - CASSANDRA_CLUSTER_NAME=dev_cluster
+            - CASSANDRA_SEEDS=DC1N1
+        expose:
+            - 7000
+            - 7001
+            - 7199
+            - 9042
+            - 9160
+        ulimits:
+            memlock: -1
+            nproc: 32768
+            nofile: 100000
+    # portainer:
+    #     image: portainer/portainer
+    #     networks:
+    #         - dc1ring
+    #     volumes:
+    #         - /var/run/docker.sock:/var/run/docker.sock
+    #         - ./containers/portainer-data:/data
+    #     ports:
+    #         - "10001:9000"
+networks:
+    dc1ring:
