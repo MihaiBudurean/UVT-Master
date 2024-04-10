@@ -1,0 +1,8 @@
+version: '3.9'
+name: acme_ltd
+services:
+  api:
+    image: acme_ltd
+    build: .
+    ports:
+      - 8000:8000
